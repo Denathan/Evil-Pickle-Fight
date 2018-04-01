@@ -210,50 +210,50 @@
                 android:id="@+id/attackPickleThird"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
                 android:layout_marginBottom="8dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginRight="24dp"
+                android:layout_weight="1"
                 android:background="@drawable/round_button"
                 android:onClick="attackPickleThird"
                 android:shadowColor="#A8A8A8"
                 android:shadowDx="0"
                 android:shadowDy="0"
                 android:shadowRadius="5"
-                android:text="Attack for 8" />
+                android:text="@string/attck8" />
 
             <Button
                 android:id="@+id/attackPickleSecond"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
                 android:layout_marginBottom="8dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginRight="24dp"
+                android:layout_weight="1"
                 android:background="@drawable/round_button"
                 android:onClick="attackPickleSecond"
                 android:shadowColor="#A8A8A8"
                 android:shadowDx="0"
                 android:shadowDy="0"
                 android:shadowRadius="5"
-                android:text="Attack for 4" />
+                android:text="@string/attck4" />
 
 
             <Button
                 android:id="@+id/attackPickleFirst"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
                 android:layout_marginBottom="8dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginRight="24dp"
+                android:layout_weight="1"
                 android:background="@drawable/round_button"
                 android:onClick="attackPickleFirst"
                 android:shadowColor="#A8A8A8"
                 android:shadowDx="0"
                 android:shadowDy="0"
                 android:shadowRadius="5"
-                android:text="Attack for 2" />
+                android:text="@string/attck2" />
         </LinearLayout>
 
         <!--View between-->
@@ -276,49 +276,49 @@
                 android:id="@+id/attackMortyThird"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
                 android:layout_marginBottom="8dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginRight="24dp"
+                android:layout_weight="1"
                 android:background="@drawable/round_button"
                 android:onClick="attackMortyThird"
                 android:shadowColor="#A8A8A8"
                 android:shadowDx="0"
                 android:shadowDy="0"
                 android:shadowRadius="5"
-                android:text="Attack for 8" />
+                android:text="@string/attck8" />
 
             <Button
                 android:id="@+id/attackMortySecond"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
                 android:layout_marginBottom="8dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginRight="24dp"
+                android:layout_weight="1"
                 android:background="@drawable/round_button"
                 android:onClick="attackMortySecond"
                 android:shadowColor="#A8A8A8"
                 android:shadowDx="0"
                 android:shadowDy="0"
                 android:shadowRadius="5"
-                android:text="Attack for 4" />
+                android:text="@string/attck4" />
 
             <Button
                 android:id="@+id/attackMortyFirst"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_marginBottom="8dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginRight="24dp"
-                android:layout_marginBottom="8dp"
+                android:layout_weight="1"
                 android:background="@drawable/round_button"
                 android:onClick="attackMortyFirst"
                 android:shadowColor="#A8A8A8"
                 android:shadowDx="0"
                 android:shadowDy="0"
                 android:shadowRadius="5"
-                android:text="Attack for 2" />
+                android:text="@string/attck2" />
         </LinearLayout>
     </LinearLayout>
 
@@ -326,25 +326,25 @@
 
     <TextView
         android:id="@+id/ricksMana"
+        style="@style/shadoweffect2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:text="30"
-        android:padding="8dp"
         android:fontFamily="sans-serif-medium"
-        style="@style/shadoweffect2"/>
+        android:padding="8dp"
+        android:text="30" />
 
     <TextView
         android:id="@+id/mortysMana"
+        style="@style/shadoweffect2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:text="30"
-        android:padding="8dp"
         android:fontFamily="sans-serif-medium"
-        style="@style/shadoweffect2"/>
+        android:padding="8dp"
+        android:text="30" />
 
     <!--timer-->
 
@@ -355,7 +355,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:src="@drawable/three"
-        android:visibility="invisible"/>
+        android:visibility="invisible" />
 
     <ImageView
         android:id="@+id/two"
@@ -364,7 +364,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:src="@drawable/two"
-        android:visibility="invisible"/>
+        android:visibility="invisible" />
 
     <ImageView
         android:id="@+id/one"
@@ -373,7 +373,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:src="@drawable/one"
-        android:visibility="invisible"/>
+        android:visibility="invisible" />
 
     <ImageView
         android:id="@+id/start"
@@ -382,7 +382,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:src="@drawable/start"
-        android:visibility="invisible"/>
+        android:visibility="invisible" />
 
     <!--Morty won-->
 
@@ -413,8 +413,7 @@
         android:id="@+id/rick_won"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="invisible"
-        >
+        android:visibility="invisible">
 
         <ImageView
             android:layout_width="match_parent"

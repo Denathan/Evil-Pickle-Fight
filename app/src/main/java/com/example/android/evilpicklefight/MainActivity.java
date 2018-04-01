@@ -1,24 +1,14 @@
 package com.example.android.evilpicklefight;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.media.Image;
 import android.media.MediaPlayer;
+import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.text.Editable;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.view.View.OnClickListener;
-import android.widget.Toast;
-
-import com.example.android.evilpicklefight.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -126,8 +116,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 mortyHp = mortyHp - 8;
 
-                if (rickMana <= 5)
-                {
+                if (rickMana <= 5) {
                     mortyWon.setVisibility(View.VISIBLE);
                     pickleThird.setEnabled(true);
                     pickleSecond.setEnabled(true);
@@ -136,9 +125,7 @@ public class MainActivity extends AppCompatActivity {
                     mortySecond.setEnabled(false);
                     mortyThird.setEnabled(false);
                     mp.start();
-                }
-
-                else {
+                } else {
                     if (mortyHp <= 0) {
                         rickWon.setVisibility(View.VISIBLE);
                         pickleThird.setEnabled(false);
@@ -184,7 +171,8 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }.start();
                     }
-                }}
+                }
+            }
         });
 
 
@@ -195,8 +183,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 mortyHp = mortyHp - 4;
 
-                if (rickMana <= 3)
-                {
+                if (rickMana <= 3) {
                     mortyWon.setVisibility(View.VISIBLE);
                     pickleThird.setEnabled(true);
                     pickleSecond.setEnabled(true);
@@ -205,55 +192,53 @@ public class MainActivity extends AppCompatActivity {
                     mortySecond.setEnabled(false);
                     mortyThird.setEnabled(false);
                     mp.start();
-                }
-
-                else {
-                if (mortyHp <= 0) {
-                    rickWon.setVisibility(View.VISIBLE);
-                    pickleThird.setEnabled(false);
-                    pickleSecond.setEnabled(false);
-                    pickleFirst.setEnabled(false);
-                    mortyFirst.setEnabled(true);
-                    mortySecond.setEnabled(true);
-                    mortyThird.setEnabled(true);
-                    mp.start();
-                }
-                else {
-                    displayForMorty(mortyHp);
-                    pickleThird.setEnabled(false);
-                    pickleSecond.setEnabled(false);
-                    pickleFirst.setEnabled(false);
-                    mortyFirst.setEnabled(true);
-                    mortySecond.setEnabled(true);
-                    mortyThird.setEnabled(true);
-                    hit.start();
-
-                    /**mana*/
-                    rickMana = rickMana - 4;
-                    if (rickMana <= 0) {
-                        mortyWon.setVisibility(View.VISIBLE);
-                        pickleThird.setEnabled(true);
-                        pickleSecond.setEnabled(true);
-                        pickleFirst.setEnabled(true);
-                        mortyFirst.setEnabled(false);
-                        mortySecond.setEnabled(false);
-                        mortyThird.setEnabled(false);
+                } else {
+                    if (mortyHp <= 0) {
+                        rickWon.setVisibility(View.VISIBLE);
+                        pickleThird.setEnabled(false);
+                        pickleSecond.setEnabled(false);
+                        pickleFirst.setEnabled(false);
+                        mortyFirst.setEnabled(true);
+                        mortySecond.setEnabled(true);
+                        mortyThird.setEnabled(true);
+                        mp.start();
                     } else {
-                        displayManaForPickle(rickMana);
+                        displayForMorty(mortyHp);
+                        pickleThird.setEnabled(false);
+                        pickleSecond.setEnabled(false);
+                        pickleFirst.setEnabled(false);
+                        mortyFirst.setEnabled(true);
+                        mortySecond.setEnabled(true);
+                        mortyThird.setEnabled(true);
+                        hit.start();
+
+                        /**mana*/
+                        rickMana = rickMana - 4;
+                        if (rickMana <= 0) {
+                            mortyWon.setVisibility(View.VISIBLE);
+                            pickleThird.setEnabled(true);
+                            pickleSecond.setEnabled(true);
+                            pickleFirst.setEnabled(true);
+                            mortyFirst.setEnabled(false);
+                            mortySecond.setEnabled(false);
+                            mortyThird.setEnabled(false);
+                        } else {
+                            displayManaForPickle(rickMana);
+                        }
+
+                        /**claw*/
+                        new CountDownTimer(500, 250) {
+
+                            public void onTick(long millisUntilFinished) {
+                                ricksClaw.setVisibility(View.VISIBLE);
+                            }
+
+                            public void onFinish() {
+                                ricksClaw.setVisibility(View.INVISIBLE);
+                            }
+                        }.start();
                     }
-
-                    /**claw*/
-                    new CountDownTimer(500, 250) {
-
-                        public void onTick(long millisUntilFinished) {
-                            ricksClaw.setVisibility(View.VISIBLE);
-                        }
-
-                        public void onFinish() {
-                            ricksClaw.setVisibility(View.INVISIBLE);
-                        }
-                    }.start();
-                }}
+                }
             }
         });
 
@@ -285,8 +270,7 @@ public class MainActivity extends AppCompatActivity {
 
                     /**mana*/
                     rickMana = rickMana - 1;
-                    if(rickMana <= 0)
-                    {
+                    if (rickMana <= 0) {
                         mortyWon.setVisibility(View.VISIBLE);
                         pickleThird.setEnabled(true);
                         pickleSecond.setEnabled(true);
@@ -294,9 +278,7 @@ public class MainActivity extends AppCompatActivity {
                         mortyFirst.setEnabled(false);
                         mortySecond.setEnabled(false);
                         mortyThird.setEnabled(false);
-                    }
-
-                    else{
+                    } else {
                         displayManaForPickle(rickMana);
                     }
 
@@ -322,8 +304,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 pickleHp = pickleHp - 8;
 
-                if (mortyMana <= 5)
-                {
+                if (mortyMana <= 5) {
                     rickWon.setVisibility(View.VISIBLE);
                     pickleThird.setEnabled(false);
                     pickleSecond.setEnabled(false);
@@ -332,54 +313,53 @@ public class MainActivity extends AppCompatActivity {
                     mortySecond.setEnabled(true);
                     mortyThird.setEnabled(true);
                     mp.start();
-                }
-
-                else {
-                if (pickleHp <= 0) {
-                    mortyWon.setVisibility(View.VISIBLE);
-                    pickleThird.setEnabled(true);
-                    pickleSecond.setEnabled(true);
-                    pickleFirst.setEnabled(true);
-                    mortyFirst.setEnabled(false);
-                    mortySecond.setEnabled(false);
-                    mortyThird.setEnabled(false);
-                    mp.start();
                 } else {
-                    displayForPickle(pickleHp);
-                    pickleThird.setEnabled(true);
-                    pickleSecond.setEnabled(true);
-                    pickleFirst.setEnabled(true);
-                    mortyFirst.setEnabled(false);
-                    mortySecond.setEnabled(false);
-                    mortyThird.setEnabled(false);
-                    hit.start();
-
-                    /**mana*/
-                    mortyMana = mortyMana - 6;
-                    if (mortyMana <= 0) {
-                        rickWon.setVisibility(View.VISIBLE);
-                        pickleThird.setEnabled(false);
-                        pickleSecond.setEnabled(false);
-                        pickleFirst.setEnabled(false);
-                        mortyFirst.setEnabled(true);
-                        mortySecond.setEnabled(true);
-                        mortyThird.setEnabled(true);
+                    if (pickleHp <= 0) {
+                        mortyWon.setVisibility(View.VISIBLE);
+                        pickleThird.setEnabled(true);
+                        pickleSecond.setEnabled(true);
+                        pickleFirst.setEnabled(true);
+                        mortyFirst.setEnabled(false);
+                        mortySecond.setEnabled(false);
+                        mortyThird.setEnabled(false);
+                        mp.start();
                     } else {
-                        displayManaForMorty(mortyMana);
+                        displayForPickle(pickleHp);
+                        pickleThird.setEnabled(true);
+                        pickleSecond.setEnabled(true);
+                        pickleFirst.setEnabled(true);
+                        mortyFirst.setEnabled(false);
+                        mortySecond.setEnabled(false);
+                        mortyThird.setEnabled(false);
+                        hit.start();
+
+                        /**mana*/
+                        mortyMana = mortyMana - 6;
+                        if (mortyMana <= 0) {
+                            rickWon.setVisibility(View.VISIBLE);
+                            pickleThird.setEnabled(false);
+                            pickleSecond.setEnabled(false);
+                            pickleFirst.setEnabled(false);
+                            mortyFirst.setEnabled(true);
+                            mortySecond.setEnabled(true);
+                            mortyThird.setEnabled(true);
+                        } else {
+                            displayManaForMorty(mortyMana);
+                        }
+
+                        /**claw*/
+                        new CountDownTimer(500, 250) {
+
+                            public void onTick(long millisUntilFinished) {
+                                mortysClaw.setVisibility(View.VISIBLE);
+                            }
+
+                            public void onFinish() {
+                                mortysClaw.setVisibility(View.INVISIBLE);
+                            }
+                        }.start();
                     }
-
-                    /**claw*/
-                    new CountDownTimer(500, 250) {
-
-                        public void onTick(long millisUntilFinished) {
-                            mortysClaw.setVisibility(View.VISIBLE);
-                        }
-
-                        public void onFinish() {
-                            mortysClaw.setVisibility(View.INVISIBLE);
-                        }
-                    }.start();
-                }}
+                }
             }
         });
 
@@ -391,8 +371,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 pickleHp = pickleHp - 4;
 
-                if (mortyMana <= 3)
-                {
+                if (mortyMana <= 3) {
                     rickWon.setVisibility(View.VISIBLE);
                     pickleThird.setEnabled(false);
                     pickleSecond.setEnabled(false);
@@ -401,54 +380,53 @@ public class MainActivity extends AppCompatActivity {
                     mortySecond.setEnabled(true);
                     mortyThird.setEnabled(true);
                     mp.start();
-                }
-
-                else {
-                if (pickleHp <= 0) {
-                    mortyWon.setVisibility(View.VISIBLE);
-                    pickleThird.setEnabled(true);
-                    pickleSecond.setEnabled(true);
-                    pickleFirst.setEnabled(true);
-                    mortyFirst.setEnabled(false);
-                    mortySecond.setEnabled(false);
-                    mortyThird.setEnabled(false);
-                    mp.start();
                 } else {
-                    displayForPickle(pickleHp);
-                    pickleThird.setEnabled(true);
-                    pickleSecond.setEnabled(true);
-                    pickleFirst.setEnabled(true);
-                    mortyFirst.setEnabled(false);
-                    mortySecond.setEnabled(false);
-                    mortyThird.setEnabled(false);
-                    hit.start();
-
-                    /**mana*/
-                    mortyMana = mortyMana - 4;
-                    if (mortyMana <= 0) {
-                        rickWon.setVisibility(View.VISIBLE);
-                        pickleThird.setEnabled(false);
-                        pickleSecond.setEnabled(false);
-                        pickleFirst.setEnabled(false);
-                        mortyFirst.setEnabled(true);
-                        mortySecond.setEnabled(true);
-                        mortyThird.setEnabled(true);
+                    if (pickleHp <= 0) {
+                        mortyWon.setVisibility(View.VISIBLE);
+                        pickleThird.setEnabled(true);
+                        pickleSecond.setEnabled(true);
+                        pickleFirst.setEnabled(true);
+                        mortyFirst.setEnabled(false);
+                        mortySecond.setEnabled(false);
+                        mortyThird.setEnabled(false);
+                        mp.start();
                     } else {
-                        displayManaForMorty(mortyMana);
+                        displayForPickle(pickleHp);
+                        pickleThird.setEnabled(true);
+                        pickleSecond.setEnabled(true);
+                        pickleFirst.setEnabled(true);
+                        mortyFirst.setEnabled(false);
+                        mortySecond.setEnabled(false);
+                        mortyThird.setEnabled(false);
+                        hit.start();
+
+                        /**mana*/
+                        mortyMana = mortyMana - 4;
+                        if (mortyMana <= 0) {
+                            rickWon.setVisibility(View.VISIBLE);
+                            pickleThird.setEnabled(false);
+                            pickleSecond.setEnabled(false);
+                            pickleFirst.setEnabled(false);
+                            mortyFirst.setEnabled(true);
+                            mortySecond.setEnabled(true);
+                            mortyThird.setEnabled(true);
+                        } else {
+                            displayManaForMorty(mortyMana);
+                        }
+
+                        /**claw*/
+                        new CountDownTimer(500, 250) {
+
+                            public void onTick(long millisUntilFinished) {
+                                mortysClaw.setVisibility(View.VISIBLE);
+                            }
+
+                            public void onFinish() {
+                                mortysClaw.setVisibility(View.INVISIBLE);
+                            }
+                        }.start();
                     }
-
-                    /**claw*/
-                    new CountDownTimer(500, 250) {
-
-                        public void onTick(long millisUntilFinished) {
-                            mortysClaw.setVisibility(View.VISIBLE);
-                        }
-
-                        public void onFinish() {
-                            mortysClaw.setVisibility(View.INVISIBLE);
-                        }
-                    }.start();
-                }}
+                }
             }
         });
 
@@ -481,8 +459,7 @@ public class MainActivity extends AppCompatActivity {
 
                     /**mana*/
                     mortyMana = mortyMana - 1;
-                    if(mortyMana <= 0)
-                    {
+                    if (mortyMana <= 0) {
                         rickWon.setVisibility(View.VISIBLE);
                         pickleThird.setEnabled(false);
                         pickleSecond.setEnabled(false);
@@ -494,9 +471,7 @@ public class MainActivity extends AppCompatActivity {
                         mortyMana = 30;
                         displayManaForPickle(rickMana);
                         displayManaForMorty(mortyMana);
-                    }
-
-                    else{
+                    } else {
                         displayManaForMorty(mortyMana);
                     }
 
@@ -516,8 +491,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /** mana*/
-
-
 
 
         /**reset button*/

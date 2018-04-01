@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Evil Pickle Fight</string>
+    <string name="attck2">Attack For 2</string>
+    <string name="attck4">Attack For 4</string>
+    <string name="attck8">Attack For 8</string>
+    <string name="pickleRick">Pickle Rick</string>
+    <string name="evilMorty">Evil Morty</string>
 </resources>
