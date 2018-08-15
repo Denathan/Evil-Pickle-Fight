@@ -6,7 +6,7 @@
 
 **Project Description:** Design and implement an app to track scores between two teams playing a game.
 
-**What I learnt:**
+**What I've learned:**
  - adding button code
  - updating views from Java code
  - properly scoping variables
